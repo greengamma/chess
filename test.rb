@@ -20,6 +20,6 @@ def column_to_index(column)
   column.downcase.ord - 'a'.ord
 end
 
-# USAGE
+# uSAGE
 move = 'e2 to e4'
 make_move(move)
