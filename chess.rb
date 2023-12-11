@@ -57,14 +57,14 @@ class Chess
 
   def parse_move(move)
     from, to = move.split(' to ')
-    from = { col: column_to_index(from[0]), row: 8 - from[1].to_i }
-    to = { col: column_to_index(to[0]), row: 8 - to[1].to_i }
+    from = { row: 8 - from[1].to_i, col: column_to_index(from[0]) }
+    to = { row: 8 - to[1].to_i, col: column_to_index(to[0]) }
     return from, to
   end
 
 
   def game_over?
-    return false
+    return falseb
   end
 
 
