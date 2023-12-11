@@ -1,6 +1,7 @@
 class Chess
   def initialize
     @board = Array.new(8) { Array.new(8, ' ') }
+    @current_player = 'White'
     setup_pieces
   end
 
@@ -26,8 +27,20 @@ class Chess
   end
 
 
+  def play
+    while !game_over?
+      display_board
+      move = get_player_input
+      make_move(move)
+      display_board
+
+      switch_player
+    end
+  end
+
+
   def get_player_input
-    puts "Player 1, enter your move (e.g., 'e2 to e4'): "
+    puts "#{@current_player}, enter your move (e.g., 'e2 to e4'): "
     gets.chomp
   end
 
@@ -50,14 +63,27 @@ class Chess
   end
 
 
+  def game_over?
+    return false
+  end
+
+
   def column_to_index(column)
     column.downcase.ord - 'a'.ord
+  end
+
+
+  def switch_player
+    @current_player = @current_player == 'White' ? 'Black' : 'White'
   end
 end
 
 # usage
-chess_game = Chess.new
-chess_game.display_board
-player_input = chess_game.get_player_input
-chess_game.make_move(player_input)
-chess_game.display_board
+# chess_game = Chess.new
+# chess_game.display_board
+# player_input = chess_game.get_player_input
+# chess_game.make_move(player_input)
+# chess_game.display_board
+
+game = Chess.new
+game.play
