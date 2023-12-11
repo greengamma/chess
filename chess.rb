@@ -79,11 +79,5 @@ class Chess
 end
 
 # usage
-# chess_game = Chess.new
-# chess_game.display_board
-# player_input = chess_game.get_player_input
-# chess_game.make_move(player_input)
-# chess_game.display_board
-
 game = Chess.new
 game.play
