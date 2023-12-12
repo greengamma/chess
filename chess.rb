@@ -64,7 +64,7 @@ class Chess
 
 
   def game_over?
-    return falseb
+    return false
   end
 
 
