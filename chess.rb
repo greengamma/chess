@@ -123,7 +123,7 @@ class Chess
   end
 end
 
-# usage case
+# usage
 game = Chess.new
 puts "Type 'load' to load a saved game or anything else to start a new game: "
 input = gets.chomp.downcase
